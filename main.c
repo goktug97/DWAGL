@@ -75,8 +75,7 @@ void update(){
     case SDL_MOUSEMOTION:
       pointx = ((float)event.button.x/(float)RESOLUTION_WIDTH-0.5) * 2.0;
       pointy = (-(float)event.button.y/(float)RESOLUTION_HEIGHT+0.5) * 2.0;
-      printf("%f, %f\n", pointx, pointy);
-      if (drawing) {
+      if (drawing && currentIdx < 1000) {
         pointCloud->points[currentIdx].x = pointx*10;
         pointCloud->points[currentIdx].y = pointy*10;
         currentIdx++;
