@@ -67,7 +67,8 @@ void update(){
         break;
       }
     case SDL_MOUSEBUTTONDOWN:
-      drawing = 1;
+      if (event.button.which == 0)
+          drawing = 1;
       break;
     case SDL_MOUSEBUTTONUP:
       drawing = 0;
@@ -178,7 +179,7 @@ int main(){
 
   // Initialize SDL
   if (SDL_Init(SDL_INIT_EVERYTHING) == -1) return 1;
-  SDL_WM_SetCaption("test", NULL);
+  // SDL_WM_SetCaption("test", NULL);
   SDL_SetVideoMode(RESOLUTION_WIDTH, RESOLUTION_HEIGHT, 0, SDL_OPENGL);
 
   float vertices[8 + numberOfVertices*2];
