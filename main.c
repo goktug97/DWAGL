@@ -48,6 +48,16 @@ int drawing = 0;
 float pointx;
 float pointy;
 
+
+void update_config(float dt, float predictTime, float heading, float clearance, float velocity) {
+  config.dt = dt;
+  config.predictTime = predictTime;
+  config.heading = heading;
+  config.clearance = clearance;
+  config.velocity = velocity;
+}
+
+
 void update(){
   SDL_Event event;
   while (SDL_PollEvent(&event)) {
